@@ -1,15 +1,26 @@
 type Round @entity {
   id: ID!
-         epoch: BigInt!
-         startBlock: BigInt
-         lockBlock: BigInt
-         endBlock: BigInt
-         lockPrice: BigInt
-         closePrice: BigInt
-         totalAmount: BigInt
-         bullAmount: BigInt
-         bearAmount: BigInt
-         rewardBaseCalAmount: BigInt
-         rewardAmount: BigInt
-         treasuryAmount: BigInt
+  epoch: BigInt!
+  startBlock: BigInt
+  startTimestamp: BigInt
+  lockBlock: BigInt
+  lockTimestamp: BigInt
+  endBlock: BigInt
+  endTimestamp: BigInt
+  lockPrice: BigInt
+  closePrice: BigInt
+  totalAmount: BigInt
+  bullAmount: BigInt
+  bearAmount: BigInt
+  rewardBaseCalAmount: BigInt
+  rewardAmount: BigInt
+  treasuryAmount: BigInt
+  bets: [Bet!]!
+}
+
+type Bet @entity {
+    id: ID!
+    amount: BigInt!
+    position: String!
+    address: String!
 }
